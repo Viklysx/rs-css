@@ -14,6 +14,9 @@ body {
 
 .main {
     width: calc(100% - 375px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     position: fixed;
     top: 0;
@@ -74,6 +77,7 @@ ol {
     background: #dfdfdfde;
     font-size: large;
     padding: 10px;
+    transition: 1s;
 }
 
 .reset:hover {
@@ -84,3 +88,21 @@ ol {
     color: #c6c6c5;
     padding: 0px 30px 30px 40px;
 }
+
+a {
+    text-decoration: none;
+    color: #8BC34A;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+a:hover {
+    color: #FFEB3B; 
+}
+
+.author-block {
+    padding: 20px;
+    color: #c6c6c5;
+    letter-spacing: 5px;
+}
+

@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -15,19 +17,18 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'GEM-PUZZLE',
+            title: 'Selectors',
             template: path.resolve(__dirname, './src/template.html'), // шаблон
             filename: 'index.html', // название выходного файла
         }),
         new CopyWebpackPlugin({
-            patterns: [
-                {
+            patterns: [{
                     from: path.resolve(__dirname, 'src/img'),
                     to: path.resolve(__dirname, 'dist/img'),
                 },
                 {
-                  from: path.resolve(__dirname, 'src/audio'),
-                  to: path.resolve(__dirname, 'dist/audio'),
+                    from: path.resolve(__dirname, 'src/audio'),
+                    to: path.resolve(__dirname, 'dist/audio'),
                 }
             ]
         }),
@@ -35,7 +36,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(), // применять изменения только при горячей перезагрузке
         new MiniCssExtractPlugin({
             filename: 'style.css',
-          }),
+        }),
     ],
     module: {
         rules: [
@@ -48,51 +49,50 @@ module.exports = {
             // изображения
             {
                 test: /\.(jpe?g|png|svg|gif)$/,
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      outputPath: 'img',
-                      name: '[name].[ext]'
-                    }},
-                  {
-                    loader: 'image-webpack-loader',
-                    options: {
-                      bypassOnDebug : true,
-                      mozjpeg: {
-                        progressive: true,
-                        quality: 75
-                      },
-                      // optipng.enabled: false will disable optipng
-                      optipng: {
-                        enabled: false,
-                      },
-                      pngquant: {
-                        quality: [0.65, 0.90],
-                        speed: 4
-                      },
-                      gifsicle: {
-                        interlaced: false,
-                        optimizationLevel: 1
-                      },
-                      // the webp option will enable WEBP
-                      webp: {
-                        quality: 75
-                      }
+                use: [{
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'img',
+                            name: '[name].[ext]'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true,
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 75
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.90],
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                                optimizationLevel: 1
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75
+                            }
+                        }
                     }
-                  }
                 ]
-              },
-              {
+            },
+            {
                 test: /\.wav$/,
-                use: [
-                  {
+                use: [{
                     loader: 'file-loader',
                     options: {
-                      outputPath: 'audio',
-                      name: '[name].[ext]'
-                    }},
-                ]
+                        outputPath: 'audio',
+                        name: '[name].[ext]'
+                    }
+                }, ]
             },
             // {
             //     test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -101,18 +101,24 @@ module.exports = {
             // шрифты и SVG
             {
                 test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-                type: 'asset/inline',
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'img',
+                        name: '[name].[ext]'
+                    }
+                }, ]
             },
             // CSS, PostCSS, Sass
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                  MiniCssExtractPlugin.loader,
-                  'css-loader',
-                  'postcss-loader',
-                  'sass-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
                 ],
-              },
+            },
             // {
             //     test: /\.(scss|css)$/,
             //     use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
