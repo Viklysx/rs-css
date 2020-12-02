@@ -74,10 +74,10 @@ ol {
     cursor: pointer;
     border: none;
     border-radius: 3px;
+    transition: 1s;
     background: #dfdfdfde;
     font-size: large;
-    padding: 10px;
-    transition: 1s;
+    padding: 10px;  
 }
 
 .reset:hover {
@@ -112,7 +112,7 @@ a:hover {
     height: 450px;
     color: #8BC34A;
     background: #221e18;
-    border: 5px solid #FFEB3B;
+    border: 3px solid #221e18;
     padding: 20px;
     margin: 30px;
 }
@@ -121,7 +121,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
-    color: cornsilk;
+    color: #e6e6e6;
     font-size: larger;
     border-bottom: 1px solid #c6c6c5;
 }
@@ -133,7 +133,67 @@ a:hover {
 
 .code-block-code__numbers {
     padding-right: 10px;
-    color: cornsilk;
+    color: #e6e6e6;
     font-size: larger;
+}
+
+.code-block__input {
+    height: 50px;
+    padding: 0px;
+    border: 3px solid #000000;
+    background: #e6e6e6;
+}
+
+.input-code {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+input {
+    height: 40px;
+    border: none;
+    background: #e6e6e6;
+    font-family: "Comfortaa", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    width: 86%;
+    
+}
+
+input:focus {
+    outline: none;
+    border-color: #e6e6e6;
+}
+
+.input-flash {
+    background: rgba(62, 255, 126, 0.199);
+    animation-name: flash;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+    50% {
+        background: #e6e6e6;
+    }
+  }
+
+.click-selector {
+    background: #c6c6c500;
+    border-radius: 2px;
+    padding: 5px;
+    color: #221e18;
+    border: solid 2px #999;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 1s;
+}
+
+.click-selector:hover {
+    background: #FFEB3B;
 }
 

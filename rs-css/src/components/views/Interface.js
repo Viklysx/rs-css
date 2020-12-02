@@ -1,5 +1,6 @@
 import Footer from './Footer';
 import CodeForm from './CodeForm';
+import Selector from './Selector';
 
 class Interface {
     constructor() {
@@ -41,9 +42,11 @@ class Interface {
         });
         const footerBlock = new Footer();
         const codeBlock = new CodeForm();
+        const inputBlock = new Selector();
 
         author.append(footerBlock.footerBlock());
         code.append(codeBlock.codeBlock());
+        input.append(inputBlock.inputBlock());
 
         main.append(animation, input, code, author);
         menu.append(this.menu(), info, buttonReset);
@@ -88,6 +91,12 @@ class Interface {
         }
         if (options.class) {
             this.elem.className = options.class;
+        }
+        if (options.type) {
+            this.elem.type = options.type;
+        }
+        if (options.placeholder) {
+            this.elem.setAttribute('placeholder', options.placeholder);
         }
         return this.elem;
     }
