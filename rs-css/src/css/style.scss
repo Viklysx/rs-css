@@ -106,3 +106,34 @@ a:hover {
     letter-spacing: 5px;
 }
 
+.code-block {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    color: #8BC34A;
+    background: #221e18;
+    border: 5px solid #FFEB3B;
+    padding: 20px;
+    margin: 30px;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    color: cornsilk;
+    font-size: larger;
+    border-bottom: 1px solid #c6c6c5;
+}
+
+.code-block-code {
+    display: flex;
+    padding-top: 10px;
+}
+
+.code-block-code__numbers {
+    padding-right: 10px;
+    color: cornsilk;
+    font-size: larger;
+}
+
