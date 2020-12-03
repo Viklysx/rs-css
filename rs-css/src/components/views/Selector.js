@@ -16,7 +16,7 @@ class Selector {
         const inputText = display.createElements({
             node: 'input',
             type: 'text',
-            placeholder: 'Type in a CSS selector',
+            placeholder: 'Введи CSS селектор',
             class: 'input-flash'
         });
         const enterSelector = display.createElements({

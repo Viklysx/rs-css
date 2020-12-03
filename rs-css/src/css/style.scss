@@ -18,7 +18,6 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -36,7 +35,7 @@ body {
     background: #221e18;
 }
 
-.menu {
+.menu, .animation {
     display: flex;
     justify-content: center;
     padding: 30px;
@@ -109,12 +108,13 @@ a:hover {
 .code-block {
     display: flex;
     flex-direction: column;
+    width: calc(100% - 10%);
     height: 450px;
     color: #8BC34A;
     background: #221e18;
     border: 3px solid #221e18;
     padding: 20px;
-    margin: 30px;
+    margin: 0px 30px 30px 30px;
 }
 
 .code-header {
@@ -169,7 +169,7 @@ input:focus {
 }
 
 .input-flash {
-    background: rgba(62, 255, 126, 0.199);
+    background: rgba(252, 255, 62, 0.342);
     animation-name: flash;
     animation-timing-function: linear;
     animation-duration: 2s;
@@ -196,4 +196,155 @@ input:focus {
 .click-selector:hover {
     background: #FFEB3B;
 }
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 30%);
+    height: 250px;
+    background: #cfa672;
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");  
+    border-radius: 5px; 
+    transform: rotateX(140deg) rotateZ(0deg) skew(1deg);
+    box-shadow: -1px -3px 10px 3px grey;
+    transform: revert;
+    margin: 50px 0px;
+  }
+
+  .animation {
+    padding: 0px;
+  }
+
+  section {
+      display: flex;
+      justify-content: center;
+  }
+
+  img {
+      margin-bottom: 30px;
+  }
+
+  .apple {
+	position:relative;
+	width:6em;
+	height:4.75em;
+	background-color:#5BC236;
+	border-radius:2em 2em 3em 3em;
+	box-shadow:inset -.25em -.25em #438F28;
+}
+
+.apple:before {
+	content:'';
+	position:absolute;
+	top:-.5em;
+	left:1.5em;
+	width:4.5em;
+	height:2.75em;
+	border-radius:3em 3em 0 0;
+	background-color:inherit;
+	box-shadow:-1.5em 0 0 #5BC236, inset -.3em 0 #438F28;
+}
+
+.apple:after {
+	content:'';
+	position:absolute;
+	top:-1em;
+	left:3em;
+	height:1.25em;
+	width:1em;
+	background-color:transparent;
+	border-radius:50% 0;
+	box-shadow:-.25em 0 0 brown;
+}
+
+.orange {
+	position:relative;
+	width:6em;
+	height:6em;
+	background-color:orange;
+	border-radius:50%;
+	box-shadow:inset -.25em -.25em #CC8400;
+}
+
+.orange:before {
+	content:'';
+	position:absolute;
+	top:-.5em;
+	left:3em;
+	height:0;
+	width:0;
+	border:1.5em solid transparent;
+	border-left:.5em solid brown;
+	border-top:0;
+	transform:rotate(20deg);
+	transform-origin:bottom left;
+}
+
+.orange:after {
+	content:'';
+	position:absolute;
+	top:-.5em;
+	left:1.5em;
+	height:0;
+	width:0;
+	border:.75em solid green;
+	border-bottom-color:darkgreen;
+	border-left-color:darkgreen;
+	border-radius:0 50%;
+}
+
+.lemon {
+	position:relative;
+	width:6em;
+	height:6em;
+	background-color:#FFE135;
+	border-radius:50% 15%;
+	transform:rotate(45deg);
+	box-shadow:inset -.25em 0em #CCB42A;
+}
+
+.pear {
+	position:relative;
+	width:6em;
+	height:6em;
+	background-color:#D1E231;
+	border-radius:50% 15% 50% 50%;
+	transform:rotate(-45deg);
+	box-shadow:inset .15em -.25em #8A9A5B;
+}
+
+.pear:after {
+	content:'';
+	position:absolute;
+	top:0em;
+	left:5.75em;
+	height:1.25em;
+	width:1em;
+	background-color:transparent;
+	border-radius:50% 0;
+	box-shadow:-.25em 0 0 brown;
+	transform:rotate(45deg);
+}
+
+.blueberry {
+    position: relative;
+    width:6em;
+    height: 5.5em;
+    top: 0.6em;
+    left:0.4em;
+    border-radius: 50%;
+    background-color: #89a2ca;
+    box-shadow: inset 0.2em -.2em  #6081B8;
+  }
+  
+  .blueberry:before{
+    content: "";
+    width: 2em;
+    height: 1em;
+    left: 2em;
+    position: absolute;
+    background-color: #3e4d64;
+    border-radius:50%;
+  }
 

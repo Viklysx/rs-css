@@ -1,6 +1,7 @@
 import Footer from './Footer';
 import CodeForm from './CodeForm';
 import Selector from './Selector';
+import FruitsBlock from './FruitsBlock';
 
 class Interface {
     constructor() {
@@ -43,10 +44,12 @@ class Interface {
         const footerBlock = new Footer();
         const codeBlock = new CodeForm();
         const inputBlock = new Selector();
+        const fruits = new FruitsBlock();
 
         author.append(footerBlock.footerBlock());
         code.append(codeBlock.codeBlock());
         input.append(inputBlock.inputBlock());
+        animation.append(fruits.fruitsBlock());
 
         main.append(animation, input, code, author);
         menu.append(this.menu(), info, buttonReset);
