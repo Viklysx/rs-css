@@ -72,6 +72,7 @@ class Interface {
             node: 'ol',
             class: 'menu-list'
         });
+        const listItem = localStorage.getItem('fruitsSelectors');
         const massLevel = ['*', '#X', '.X', 'X Y', 'X', 'X + Y', 'Х > Y', 'X ~ Y', 'X:not(selector)', 'X:nth-child(n)', 'X:nth-last-child(n)', 'X:first-child', 'X:last-child'];
         for (let i = 1; i < 14; i++) {
             const listElement = this.createElements({
@@ -79,11 +80,15 @@ class Interface {
                 class: 'menu-list li',
                 content: `${i}. ${massLevel[i-1]}`
             });
+            if (i == listItem) {
+                listElement.classList.add('active');
+            }
             list.append(listElement);
         }
 
         wrapperList.append(list);
         wrapper.append(wrapperList, wrapperReset);
+
         return wrapper;
     }
 

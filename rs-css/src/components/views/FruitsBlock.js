@@ -25,12 +25,21 @@ class FruitsBlock {
             node: 'div',
             class: 'pear'
         });
-        const blueberry = display.createElements({
-            node: 'div',
-            class: 'blueberry'
-        });
 
-        block.append(apple, orange, lemon, pear, blueberry);
+        const listItem = localStorage.getItem('fruitsSelectors');
+
+        if (1 == listItem) {
+            apple.classList.add('animation-rotate');
+            orange.classList.add('animation-rotate');
+            lemon.classList.add('animation-rotate');
+            pear.classList.add('animation-rotate');
+        }
+        // const blueberry = display.createElements({
+        //     node: 'div',
+        //     class: 'blueberry'
+        // });
+
+        block.append(apple, orange, lemon, pear);
 
         return block;
     }
