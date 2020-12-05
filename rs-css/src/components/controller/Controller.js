@@ -1,6 +1,11 @@
 class Controller {
-    constructor() {
-    }
+    constructor(parentNode, tag = 'div', className = '', content = '') {
+        this.node = document.createElement(tag);
+        this.node.className = className;
+        this.node.innerHTML = content;
+        console.log(parentNode, this.node);
+        if (parentNode) parentNode.appendChild(this.node);
+      }
 }
 
 export default Controller;

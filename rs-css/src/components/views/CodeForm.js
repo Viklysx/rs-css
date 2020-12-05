@@ -38,9 +38,16 @@ class CodeForm {
         codeHeaderTextRight.textContent = 'index.html';
 
         blockCodeNumbers.innerHTML =
-            `1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15`;
-        blockCodeContent.textContent = 
-            `<div>div class="table"&gt;<div class="">&lt;apple /&gt;</div><div class="">&lt;apple  class="small" /&gt;</div><div class="">&lt;bento&gt;<div class="">&lt;orange  class="small" /&gt;</div>&lt;/bento&gt;</div><div class="">&lt;plate&gt;<div class="">&lt;orange /&gt;</div>&lt;/plate&gt;</div><div class="">&lt;plate&gt;<div class="">&lt;orange  class="small" /&gt;</div>&lt;/plate&gt;</div>&lt;/div&gt;`
+            `<span class="code-block-numbers">1</span>
+            <span class="code-block-numbers">2</span>
+            <span class="code-block-numbers">3</span>
+            <span class="code-block-numbers">4</span>
+            <span class="code-block-numbers">5</span>
+            <span class="code-block-numbers">6</span>
+            <span class="code-block-numbers">7</span>
+            <span class="code-block-numbers">8</span>
+            <span class="code-block-numbers">9</span>
+            <span class="code-block-numbers">10</span>`;
 
         codeHeader.append(codeHeaderTextLeft, codeHeaderTextRight);
         blockCode.append(blockCodeNumbers, blockCodeContent);

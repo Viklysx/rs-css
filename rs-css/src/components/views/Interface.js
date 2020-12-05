@@ -2,6 +2,7 @@ import Footer from './Footer';
 import CodeForm from './CodeForm';
 import Selector from './Selector';
 import FruitsBlock from './FruitsBlock';
+import CodeConttoll from '../controller/CodeControll';
 
 class Interface {
     constructor() {
@@ -49,12 +50,15 @@ class Interface {
         author.append(footerBlock.footerBlock());
         code.append(codeBlock.codeBlock());
         input.append(inputBlock.inputBlock());
-        animation.append(fruits.fruitsBlock());
+        // animation.append(fruits.fruitsBlock());
 
         main.append(animation, input, code, author);
         menu.append(this.menu(), info, buttonReset);
 
         this.root.append(main, menu);
+
+        const contr = new CodeConttoll();
+        contr.codeEvents();
     }
 
     menu() {
