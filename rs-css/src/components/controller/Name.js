@@ -35,7 +35,6 @@ class Name extends Control {
                         setAction(it, act, mtr, true);
                     });
             }
-
         };
 
         elem.node.onmousemove = () => {

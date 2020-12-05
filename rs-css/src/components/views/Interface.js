@@ -1,8 +1,9 @@
 import Footer from './Footer';
 import CodeForm from './CodeForm';
 import Selector from './Selector';
-import FruitsBlock from './FruitsBlock';
+// import FruitsBlock from './FruitsBlock';
 import CodeConttoll from '../controller/CodeControll';
+import Levels from '../controller/Levels';
 
 class Interface {
     constructor() {
@@ -45,7 +46,7 @@ class Interface {
         const footerBlock = new Footer();
         const codeBlock = new CodeForm();
         const inputBlock = new Selector();
-        const fruits = new FruitsBlock();
+        // const fruits = new FruitsBlock();
 
         author.append(footerBlock.footerBlock());
         code.append(codeBlock.codeBlock());
@@ -88,6 +89,7 @@ class Interface {
                 listElement.classList.add('active');
             }
             list.append(listElement);
+            const levelButtons = new Levels(listElement);
         }
 
         wrapperList.append(list);

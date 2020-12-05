@@ -47,7 +47,12 @@ class CodeForm {
             <span class="code-block-numbers">7</span>
             <span class="code-block-numbers">8</span>
             <span class="code-block-numbers">9</span>
-            <span class="code-block-numbers">10</span>`;
+            <span class="code-block-numbers">10</span>
+            <span class="code-block-numbers">11</span>
+            <span class="code-block-numbers">12</span>
+            <span class="code-block-numbers">13</span>
+            <span class="code-block-numbers">14</span>
+            <span class="code-block-numbers">15</span>`;
 
         codeHeader.append(codeHeaderTextLeft, codeHeaderTextRight);
         blockCode.append(blockCodeNumbers, blockCodeContent);

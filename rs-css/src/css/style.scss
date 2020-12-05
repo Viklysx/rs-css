@@ -204,8 +204,8 @@ input:focus {
     align-items: center;
     width: calc(100% - 30%);
     height: 15.625rem;
-    background: #cfa672;
-    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+    background-image: url("https://png.pngtree.com/58pic/32/47/08/84J58PICdb53a5bA154Cd_PIC2018.jpg");
+    background-size: cover;
     border-radius: 0.3125rem;
     transform: rotateX(140deg) rotateZ(0deg) skew(1deg);
     box-shadow: 2px 3px 10px 3px grey;
@@ -237,6 +237,7 @@ img {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -370,19 +371,19 @@ img {
 .code-block-left {
     padding-left: 1.25rem;
     text-align: initial;
-  }
-  
-  .action {
+}
+
+.action {
     padding-left: 1.25rem;
     color: #FFE135;
-  }
+}
 
-  .action-friuts {
-    box-shadow: 0px 0px 10px 11px rgba(251, 255, 255, 0.54);
-  }
+.action-friuts {
+    box-shadow: 0px 0px 10px 11px rgba(255, 251, 254, 0.54);
+}
 
-  .code-block-numbers {
+.code-block-numbers {
     display: block;
     text-align: initial;
     font-size: initial;
-  }
+}
