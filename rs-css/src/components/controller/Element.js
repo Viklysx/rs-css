@@ -9,7 +9,7 @@ class Element extends Controller {
     this.node.onmouseleave = () => {
       this.node.className = className;
     };
-  }
+;  }
 }
 
 export default Element;

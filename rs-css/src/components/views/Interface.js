@@ -83,7 +83,8 @@ class Interface {
             const listElement = this.createElements({
                 node: 'li',
                 class: 'menu-list li',
-                content: `${i}. ${massLevel[i-1]}`
+                content: `${i}. ${massLevel[i-1]}`,
+                dataLevel: i
             });
             if (i == listItem) {
                 listElement.classList.add('active');
@@ -111,6 +112,9 @@ class Interface {
         }
         if (options.placeholder) {
             this.elem.setAttribute('placeholder', options.placeholder);
+        }
+        if (options.dataLevel) {
+            this.elem.setAttribute('data-level', options.dataLevel);
         }
         return this.elem;
     }

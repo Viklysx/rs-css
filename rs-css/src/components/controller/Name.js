@@ -6,11 +6,27 @@ class Name extends Control {
         super(parentNode, 'div', 'code-block-left');
         this.childs = [];
         this.name = obj.name;
+        this.text = obj.text;
 
-        const elem = new Element(this.node, 'code-block-left', '&lt;' + obj.name + '&gt;');
+        let strParam;
+        if (obj.id) {
+            strParam = `&lt${obj.name} id = "${obj.id}"&gt;`;
+        }
+        else if (obj.class) {
+            strParam = `&lt${obj.name} class = "${obj.class}"&gt;`;
+        }
+        else strParam = `&lt${obj.name}&gt;`;
+        const elem = new Element(this.node, 'code-block-left', strParam);
+        const info = document.querySelector('.info');
         let cont;
+        if (this.text) {
+            info.innerHTML = this.text;
+        };       
         if (obj.name !== 'table') {
-            cont = new Control(parentNode1, obj.name, `${obj.name} animation-rotate`);
+            if (obj.animation === true) {
+                cont = new Control(parentNode1, obj.name, `${obj.name} animation-rotate`);
+            }
+            else cont = new Control(parentNode1, obj.name, `${obj.name}`);           
         } else cont = new Control(parentNode1, obj.name, `${obj.name}`);
 
         if (Array.isArray(obj.childs) && obj.childs.length) {
@@ -26,7 +42,12 @@ class Name extends Control {
 
         const setAction = (n, act, mtr, ntj) => {
             if (obj.name !== 'table') {
-                if (!ntj) n.cont.node.className = mtr ? `${obj.name} animation-rotate action-friuts` : `${obj.name} animation-rotate`;
+                if (obj.animation === true) {
+                    if (!ntj) n.cont.node.className = mtr ? `${obj.name} animation-rotate action-friuts` : `${obj.name} animation-rotate`;
+                }
+                else {
+                    if (!ntj) n.cont.node.className = mtr ? `${obj.name} action-friuts` : `${obj.name}`;
+                }
                 this.onChildAction && this.onChildAction(n, act);
                 n.elem.node.className = act;
                 n.elem2.node.className = act;

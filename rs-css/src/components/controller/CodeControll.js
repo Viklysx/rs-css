@@ -36,18 +36,23 @@ class CodeControll {
         this.arr = {
             name: 'table',
             childs: [{
-                    name: 'apple'
+                    name: 'apple',
+                    animation: true                
                 },
                 {
-                    name: 'orange'
+                    name: 'orange',
+                    animation: true 
                 },
                 {
-                    name: 'lemon'
+                    name: 'lemon',
+                    animation: true 
                 },
                 {
-                    name: 'pear'
+                    name: 'pear',
+                    animation: true 
                 },
-            ]
+            ],
+            text: 'Укажи селектор, чтобы выбрать все элементы.'
         };
     }
 

@@ -15,7 +15,7 @@ class Footer {
             node: 'div'
         });
         course.innerHTML =
-            `<a href="https://rs.school/js/" target="_blank"><img src="./img/rs_school_js.svg" alt="school" width="10%"></a>`;
+            `<a href="https://rs.school/js/" target="_blank"><img src="./img/rs_school_js.svg" alt="school" width="8%"></a>`;
         const wrapper = display.createElements({
             node: 'div',
             class: 'author'

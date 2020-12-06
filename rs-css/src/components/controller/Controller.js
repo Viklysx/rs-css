@@ -3,6 +3,7 @@ class Controller {
         this.node = document.createElement(tag);
         this.node.className = className;
         this.node.innerHTML = content;
+        console.log(this.node)
         if (parentNode) parentNode.appendChild(this.node);
       }
 }

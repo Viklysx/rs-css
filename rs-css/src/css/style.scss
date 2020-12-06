@@ -110,7 +110,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     width: calc(100% - 10%);
-    height: 28.125rem;
+    height: 23rem;
     color: #8BC34A;
     background: #221e18;
     border: 3px solid #221e18;
@@ -356,6 +356,7 @@ img {
     border-radius: 50%;
     background-color: #89a2ca;
     box-shadow: inset 0.2em -.2em #6081B8;
+    transform: scale(-1, 1);
 }
 
 .blueberry:before {
@@ -366,6 +367,23 @@ img {
     position: absolute;
     background-color: #3e4d64;
     border-radius: 50%;
+}
+
+.plate {
+    background: #fffefe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 10em;
+    height: 10em;
+	border-radius: 100%;
+    box-shadow: inset 0 0 0 1px #e6e5e5, 0 6px 0 0 #cdcccc;
+}
+
+.plate:after {
+	background: #fffefe;
+	border-radius: 100%;
+	box-shadow: inset 0 0 0 1px #f0efef, inset -2px 0 0 0 #cdcccc, inset -2px 3px 0 0 #cdcccc, inset 0 3px 0 0 #cdcccc;
 }
 
 .code-block-left {
