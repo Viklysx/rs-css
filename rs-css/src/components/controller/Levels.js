@@ -302,8 +302,12 @@ class Levels {
     blockCode.innerHTML = '';
     fruits.innerHTML = '';
     localStorage.setItem('fruitsSelectors', level);
-    const codeEvent = new Name(document.querySelector('.code-block-code__content'), document.querySelector('.animation'), this.levelsCode[level]);
+    this.codeEvents(blockCode, fruits, level);
     const checkSelector = new ClickSelector();
+  }
+
+  codeEvents(blockCode, fruits, level) {
+    const codeEvent = new Name(blockCode, fruits, this.levelsCode[level]);
   }
 }
  

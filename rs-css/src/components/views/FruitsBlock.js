@@ -34,12 +34,11 @@ class FruitsBlock {
             lemon.classList.add('animation-rotate');
             pear.classList.add('animation-rotate');
         }
-        // const blueberry = display.createElements({
-        //     node: 'div',
-        //     class: 'blueberry'
-        // });
 
         block.append(apple, orange, lemon, pear);
+
+        const levelReturn = new Levels(listElement);
+        levelReturn.codeEvents(document.querySelector('.code-block-code__content'), document.querySelector('.animation'), i)  
 
         return block;
     }

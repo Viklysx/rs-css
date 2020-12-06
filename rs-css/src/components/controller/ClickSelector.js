@@ -1,9 +1,8 @@
-import Levels from './Levels';
+import ClickListener from './ClickListener';
 
 class ClickSelector {
     constructor() {
         this.checkSelector();
-
     }
 
     checkSelector() {
@@ -11,6 +10,7 @@ class ClickSelector {
             'table:not(.vitamin, .fruit)', 'table lemon:nth-child(2)', 'table blueberry:nth-last-child(1)', 'table:first-child', 'table:last-child'
         ];
         const inputSelector = root.firstChild.childNodes[1].firstChild.firstChild.firstChild;
+        const checkSelector = root.firstChild.childNodes[1].firstChild.firstChild.lastChild;
         const levels = document.querySelectorAll('.menu-list');
         inputSelector.oninput = () => {
             if (inputSelector.value !== '') {
@@ -19,30 +19,15 @@ class ClickSelector {
                 inputSelector.classList.add('input-flash');
             }
         };
-        inputSelector.addEventListener('keydown', function (e) {
-            const listItem = localStorage.getItem('fruitsSelectors');
+        const listItem = localStorage.getItem('fruitsSelectors');
+        inputSelector.onkeydown = function (e) {          
             if (e.keyCode === 13) {
-                if (inputSelector.value.trim() !== levelsAndSelectors[Number(listItem)]) {
-                    const code = document.querySelector('.code-block__input');
-                    code.classList.add('shaking');
-                    setTimeout(() => {
-                        code.classList.remove('shaking');
-                    }, 1000);
-                } else {
-                    levels[Number(listItem)].classList.remove('active');
-                    levels[Number(listItem)].classList.add('succes');
-                    const animationFruit = document.querySelectorAll('.animation-rotate');
-                    animationFruit.forEach(key => {
-                        key.classList.remove('animation-rotate');
-                        key.classList.add('hidden-fruits');
-                    });
-                    setTimeout(() => {
-                        const level = new Levels(levels[Number(listItem)]);
-                        level.transitionLevels(levels[Number(listItem) + 1]);
-                    }, 2000);
-                };
+                const events = new  ClickListener(listItem, inputSelector, levelsAndSelectors, levels);
             }
-        });
+        };
+        checkSelector.onclick = function () { 
+            const eventsButton = new  ClickListener(listItem, inputSelector, levelsAndSelectors, levels);
+        };
         inputSelector.value = '';
         inputSelector.classList.add('input-flash');
     }

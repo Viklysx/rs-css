@@ -8,7 +8,7 @@
 
 body {
     font-size: 1rem;
-    background: #2e2a23;
+    background: #322f28;
     font-family: "Comfortaa", "Helvetica Neue", sans-serif;
 }
 
@@ -24,15 +24,14 @@ body {
 }
 
 .levels {
+    background: #26221c;
     position: fixed;
     display: flex;
     flex-direction: column;
     width: 23.4375rem;
-    right: 0;
-    top: 2.5rem;
     top: 0;
-    bottom: 0;
-    background: #221e18;
+    right: 0;   
+    bottom: 0;   
 }
 
 .menu,
@@ -112,8 +111,8 @@ a:hover {
     width: calc(100% - 10%);
     height: 23rem;
     color: #8BC34A;
-    background: #221e18;
-    border: 3px solid #221e18;
+    background: #26221c;
+    border: 3px solid #26221c;
     padding: 1.25rem;
     margin: 0px 1.875rem 1.875rem 1.875rem;
 }
@@ -187,7 +186,7 @@ input:focus {
     background: #c6c6c500;
     border-radius: 0.125rem;
     padding: 0.3125rem;
-    color: #221e18;
+    color: #26221c;
     border: solid 2px #999;
     cursor: pointer;
     border-radius: 0.1875rem;
@@ -242,7 +241,6 @@ img {
         transform: rotate(360deg);
     }
 }
-
 
 // стили для фруктов взяты с codepen.io
 .apple {
@@ -368,6 +366,8 @@ img {
     background-color: #3e4d64;
     border-radius: 50%;
 }
+
+// пример тени для тарелки был найден на codepen.io
 
 .plate {
     background: #fffefe;

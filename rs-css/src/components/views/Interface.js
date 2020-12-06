@@ -1,9 +1,9 @@
 import Footer from './Footer';
 import CodeForm from './CodeForm';
 import Selector from './Selector';
-// import FruitsBlock from './FruitsBlock';
 import CodeConttoll from '../controller/CodeControll';
 import Levels from '../controller/Levels';
+import ClickReset from '../controller/ClickReset';
 
 class Interface {
     constructor() {
@@ -46,12 +46,10 @@ class Interface {
         const footerBlock = new Footer();
         const codeBlock = new CodeForm();
         const inputBlock = new Selector();
-        // const fruits = new FruitsBlock();
 
         author.append(footerBlock.footerBlock());
         code.append(codeBlock.codeBlock());
         input.append(inputBlock.inputBlock());
-        // animation.append(fruits.fruitsBlock());
 
         main.append(animation, input, code, author);
         menu.append(this.menu(), info, buttonReset);
@@ -59,6 +57,7 @@ class Interface {
         this.root.append(main, menu);
 
         const contr = new CodeConttoll();
+        const reset = new ClickReset(buttonReset);
         contr.codeEvents();
     }
 
@@ -87,7 +86,7 @@ class Interface {
                 dataLevel: i
             });
             if (i == listItem) {
-                listElement.classList.add('active');              
+                listElement.classList.add('active');                       
             }
             list.append(listElement);
             const levelButtons = new Levels(listElement);           
