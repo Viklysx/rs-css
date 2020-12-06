@@ -444,4 +444,88 @@ img {
         text-shadow: 0 0 0.625rem #fff; 
     }
 }
+
+@media (max-width: 1440px) {
+    .table {
+        width: calc(100% - 10%);
+        height: 10.625rem;
+    }
+
+    .menu-list li, .reset, .hint {
+        font-size: inherit;
+        padding: 0.4rem;
+    }
+
+    .code-block {
+        height: 22rem;
+        margin: 0rem 1.875rem 0rem 1.875rem;
+    }
+
+    .code-block__input {
+        height: 3.125rem;
+    }
+
+    .plate {
+        width: 9em;
+        height: 9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .levels {
+        width: 15rem;
+        overflow-y: auto;
+    }
+
+    ol, .reset, .hint {
+        width: 14rem;
+    }
+
+    .reset, .hint {
+        margin-left: 0.5rem;
+    }
+
+    .plate {
+        width: 8em;
+        height: 8em;
+    }
+
+    .main {
+        width: calc(100% - 15rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .levels {
+        width: 10rem;
+        overflow-y: auto;
+    }
+
+    ol, .reset, .hint {
+        width: 9rem;
+    }
+
+    .main {
+        width: calc(100% - 10rem);
+    }
+
+    .table {
+        width: calc(100% - 10%);
+        height: 30rem;
+        flex-direction: column;
+    }
+
+    .author img {
+        width: 20%;
+    }
+
+    .input-code {
+        flex-direction: column;
+    }
+
+    .code-block__input {
+        height: 5.5rem;
+        padding: 0.125rem;
+    }
+}
    

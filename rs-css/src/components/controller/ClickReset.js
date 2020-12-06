@@ -25,6 +25,9 @@ class ClickReset {
             text: 'Укажи селектор, чтобы выбрать все элементы.'
         };
         element.addEventListener('click', function () {
+            if (document.querySelector('.final')) {
+                document.querySelector('.final').classList.remove('final');
+            };          
             for (let i = 1; i < 14; i++) {
                 localStorage.removeItem(`fruitsSelectors_${i}`);
             }
