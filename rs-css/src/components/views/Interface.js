@@ -4,6 +4,7 @@ import Selector from './Selector';
 import CodeControll from '../controller/CodeControll';
 import Levels from '../controller/Levels';
 import ClickReset from '../controller/ClickReset';
+import ClickHint from '../controller/ClickHint';
 
 class Interface {
     constructor() {
@@ -59,6 +60,11 @@ class Interface {
             content: 'Сбросить',
             class: 'reset'
         });
+        const buttonHint = this.createElements({
+            node: 'button',
+            content: 'Подсказка',
+            class: 'hint'
+        });
         const info = this.createElements({
             node: 'div',
             content: 'Для старта нажми на любой уровень.',
@@ -77,12 +83,13 @@ class Interface {
         input.append(inputBlock.inputBlock());
 
         main.append(animation, input, code, author);
-        menu.append(this.menu(), info, buttonReset);
+        menu.append(this.menu(), info, buttonReset, buttonHint);
 
         this.root.append(main, menu);
 
         const contr = new CodeControll();
         const reset = new ClickReset(buttonReset);
+        const hint = new ClickHint(buttonHint);
         contr.codeEvents();
     }
 

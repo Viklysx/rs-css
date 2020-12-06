@@ -67,7 +67,7 @@ ol {
     background: #FFEB3B !important;
 }
 
-.reset {
+.reset, .hint {
     margin-left: 2.5rem;
     width: 18.75rem;
     cursor: pointer;
@@ -77,10 +77,15 @@ ol {
     background: #dfdfdfde;
     font-size: large;
     padding: 0.625rem;
+    margin-bottom: 0.625rem;
 }
 
 .reset:hover {
     background: #ee3636;
+}
+
+.hint:hover {
+    background: #FFEB3B;
 }
 
 .info {
