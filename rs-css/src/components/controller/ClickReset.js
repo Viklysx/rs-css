@@ -25,7 +25,7 @@ class ClickReset {
             text: 'Укажи селектор, чтобы выбрать все элементы.'
         };
         element.addEventListener('click', function () {
-            for (let i = 1; i < 15; i++) {
+            for (let i = 1; i < 14; i++) {
                 localStorage.removeItem(`fruitsSelectors_${i}`);
             }
             localStorage.setItem(`fruitsSelectors`, '1');

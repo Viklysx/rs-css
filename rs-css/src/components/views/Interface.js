@@ -1,13 +1,34 @@
 import Footer from './Footer';
 import CodeForm from './CodeForm';
 import Selector from './Selector';
-import CodeConttoll from '../controller/CodeControll';
+import CodeControll from '../controller/CodeControll';
 import Levels from '../controller/Levels';
 import ClickReset from '../controller/ClickReset';
 
 class Interface {
     constructor() {
         this.root = root;
+        const arr = {
+            name: 'table',
+            childs: [{
+                    name: 'apple',
+                    animation: true
+                },
+                {
+                    name: 'orange',
+                    animation: true
+                },
+                {
+                    name: 'lemon',
+                    animation: true
+                },
+                {
+                    name: 'pear',
+                    animation: true
+                },
+            ],
+            text: 'Укажи селектор, чтобы выбрать все элементы.'
+        };
     }
 
     main() {
@@ -40,9 +61,13 @@ class Interface {
         });
         const info = this.createElements({
             node: 'div',
-            content: 'Тут описание задания',
-            class: 'info'
+            content: 'Для старта нажми на любой уровень.',
+            class: 'info final'
         });
+
+        if (localStorage.getItem('fruitsSelectors') !== null) {
+            info.classList.remove('final');
+        }
         const footerBlock = new Footer();
         const codeBlock = new CodeForm();
         const inputBlock = new Selector();
@@ -56,7 +81,7 @@ class Interface {
 
         this.root.append(main, menu);
 
-        const contr = new CodeConttoll();
+        const contr = new CodeControll();
         const reset = new ClickReset(buttonReset);
         contr.codeEvents();
     }
@@ -89,11 +114,11 @@ class Interface {
                 listElement.classList.add('active');                       
             }
             list.append(listElement);
-            const levelButtons = new Levels(listElement);           
+            const levelButtons = new Levels(listElement);      
         }
 
         wrapperList.append(list);
-        wrapper.append(wrapperList, wrapperReset);
+        wrapper.append(wrapperList, wrapperReset);  
 
         return wrapper;
     }

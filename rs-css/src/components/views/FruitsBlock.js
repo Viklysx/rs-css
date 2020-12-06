@@ -1,4 +1,6 @@
 import Interface from './Interface';
+import Name from '../controller/Name';
+import ClickSelector from '../controller/ClickSelector';
 
 class FruitsBlock {
     constructor() {}
@@ -37,8 +39,8 @@ class FruitsBlock {
 
         block.append(apple, orange, lemon, pear);
 
-        const levelReturn = new Levels(listElement);
-        levelReturn.codeEvents(document.querySelector('.code-block-code__content'), document.querySelector('.animation'), i)  
+        // const levelReturn = new Levels(listElement);
+        // levelReturn.codeEvents(document.querySelector('.code-block-code__content'), document.querySelector('.animation'), arr)  
 
         return block;
     }

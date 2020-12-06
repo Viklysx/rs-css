@@ -287,13 +287,14 @@ class Levels {
   clickLevel(item) {
     item.addEventListener('click', () => {
         this.transitionLevels(item);
+        this.root.lastChild.childNodes[1].classList.remove('final');
     })
   }
 
   transitionLevels(item) {
     const itemAll = this.root.lastChild.firstChild.firstChild.firstChild.childNodes;
     itemAll.forEach(key => {
-        key.classList.remove('active')
+        key.classList.remove('active');
     });
     item.classList.add('active');
     const level = item.getAttribute('data-level');
