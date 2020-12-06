@@ -1,4 +1,5 @@
 import Name from './Name';
+import ClickSelector from './ClickSelector';
 
 class Levels {
     constructor(listElement) {
@@ -79,7 +80,7 @@ class Levels {
                         animation: true
                     }
                 ],
-                text: 'Укажи верный селектор, который отличается на картинке и является одним из дочерних y table.'
+                text: 'Укажи верный селектор, который выделен на картинке и является одним из дочерних y table.'
             },
             {
                 name: 'table',
@@ -96,7 +97,7 @@ class Levels {
                         animation: true
                     }
                 ],
-                text: 'Укажи верный селектор, чтобы он относился к к анимированному фрукту.'
+                text: 'Укажи верный селектор, чтобы он относился к анимированным фруктам.'
             },
             {
                 name: 'table',
@@ -117,7 +118,7 @@ class Levels {
                         animation: true 
                     },
                 ],
-                text: 'Укажи верный селектор, который идет сразу после pear.'
+                text: 'Укажи верный селектор, который выберет элемент, следующий сразу после pear.'
             },
             {
                 name: 'table',
@@ -144,7 +145,7 @@ class Levels {
                 name: 'table',
                 childs: [{
                         name: 'plate',
-                        animation: true 
+                        animation: false 
                     },
                     {
                         name: 'orange',
@@ -221,14 +222,14 @@ class Levels {
                     },
                     {
                         name: 'blueberry',
-                        animation: true
+                        animation: false
                     },
                     {
                         name: 'blueberry',
-                        animation: false
+                        animation: true
                     },
                 ],
-                text: 'Укажи селектор, который выберет второй элемент с конца.'
+                text: 'Укажи селектор, который выберет последний элемент blueberry.'
             },
             {
                 name: 'table',
@@ -253,7 +254,7 @@ class Levels {
                         animation: false
                     },
                 ],
-                text: 'Укажи селектор, который выберет первый дочерний элемент table.'
+                text: 'Укажи селектор, который выберет первый дочерний элемент table (apple).'
             },
             {
                 name: 'table',
@@ -285,18 +286,24 @@ class Levels {
 
   clickLevel(item) {
     item.addEventListener('click', () => {
-        const itemAll = this.root.lastChild.firstChild.firstChild.firstChild.childNodes;
-        itemAll.forEach(key => {
-            key.classList.remove('active')
-        });
-        item.classList.add('active');
-        const level = item.getAttribute('data-level');
-        const blockCode = document.querySelector('.code-block-code__content');
-        const fruits = document.querySelector('.animation');
-        blockCode.innerHTML = '';
-        fruits.innerHTML = '';
-        const codeEvent = new Name(document.querySelector('.code-block-code__content'), document.querySelector('.animation'), this.levelsCode[level]);
+        this.transitionLevels(item);
     })
+  }
+
+  transitionLevels(item) {
+    const itemAll = this.root.lastChild.firstChild.firstChild.firstChild.childNodes;
+    itemAll.forEach(key => {
+        key.classList.remove('active')
+    });
+    item.classList.add('active');
+    const level = item.getAttribute('data-level');
+    const blockCode = document.querySelector('.code-block-code__content');
+    const fruits = document.querySelector('.animation');
+    blockCode.innerHTML = '';
+    fruits.innerHTML = '';
+    localStorage.setItem('fruitsSelectors', level);
+    const codeEvent = new Name(document.querySelector('.code-block-code__content'), document.querySelector('.animation'), this.levelsCode[level]);
+    const checkSelector = new ClickSelector();
   }
 }
  

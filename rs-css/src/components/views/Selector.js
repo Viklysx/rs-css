@@ -27,10 +27,8 @@ class Selector {
 
         blockCode.append(inputText, enterSelector);
         block.append(blockCode);
-
         return block;
     }
-
 }
 
 export default Selector;

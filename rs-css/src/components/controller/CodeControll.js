@@ -1,38 +1,8 @@
 import Name from './Name';
+import ClickSelector from './ClickSelector';
 
 class CodeControll {
     constructor() {
-        // this.arr = {
-        //     name: 'table',
-        //     childs: [
-        //     {
-        //       name: 'plate',
-        //       childs: [],
-        //     },
-        //     {
-        //       name: 'plate',
-        //       childs: [{
-        //         name: 'pickle',
-        //         childs: [],
-        //       },
-        //       {
-        //         name: 'pickle',
-        //         childs: [{
-        //           name: 'orange',
-        //           childs: [],
-        //         },],
-        //       },
-        //       {
-        //         name: 'pickle',
-        //         childs: [],
-        //       },],
-        //     },
-        //     {
-        //       name: 'plate',
-        //       childs: [],
-        //     },
-        //   ]
-        //   }; 
         this.arr = {
             name: 'table',
             childs: [{
@@ -58,6 +28,7 @@ class CodeControll {
 
     codeEvents() {
         const codeEvent = new Name(document.querySelector('.code-block-code__content'), document.querySelector('.animation'), this.arr);
+        const checkSelector = new ClickSelector();
     }
 }
 

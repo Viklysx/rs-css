@@ -25,10 +25,6 @@ module.exports = {
             patterns: [{
                     from: path.resolve(__dirname, 'src/img'),
                     to: path.resolve(__dirname, 'dist/img'),
-                },
-                {
-                    from: path.resolve(__dirname, 'src/audio'),
-                    to: path.resolve(__dirname, 'dist/audio'),
                 }
             ]
         }),
@@ -83,16 +79,6 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.wav$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        outputPath: 'audio',
-                        name: '[name].[ext]'
-                    }
-                }, ]
             },
             // {
             //     test: /\.(?:ico|gif|png|jpg|jpeg)$/i,

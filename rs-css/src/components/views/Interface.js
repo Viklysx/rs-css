@@ -87,10 +87,10 @@ class Interface {
                 dataLevel: i
             });
             if (i == listItem) {
-                listElement.classList.add('active');
+                listElement.classList.add('active');              
             }
             list.append(listElement);
-            const levelButtons = new Levels(listElement);
+            const levelButtons = new Levels(listElement);           
         }
 
         wrapperList.append(list);

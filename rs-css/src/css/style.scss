@@ -61,7 +61,7 @@ ol {
 }
 
 .succes {
-    background: #8BC34A;
+    background: #8BC34A !important;
 }
 
 .active {
@@ -404,4 +404,26 @@ img {
     display: block;
     text-align: initial;
     font-size: initial;
+}
+
+.hidden-fruits {
+    opacity: 0;
+    transition: all 2s linear;
+}
+
+.shaking { 
+    animation: 0.1s shake ease-out;  
+    animation-iteration-count: 3;  
+}
+@keyframes shake {
+    0%, 25% {
+        left: -1px;
+        top:-1px;
+        transform: translateX(-2%);
+    }
+    50%, 100% {
+        left: 1px;
+        top: 1px;
+        transform: translateX(2%);
+    }
 }
