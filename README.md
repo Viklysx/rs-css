@@ -1,2 +1,4 @@
-# viklysx-JS2020Q3
-Private repository for @viklysx
+Таск, направленный на обучение css-селекторам.
+***
+Ссылка: https://viklysx-rs-css.netlify.app
+
